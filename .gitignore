@@ -1,0 +1,26 @@
+# Runtime / regenerated state
+logs/
+database/
+comms/
+gcodes/
+.moonraker.uuid
+moonraker.asvc
+
+# Sensitive or machine-specific
+certs/
+systemd/
+.claude/
+
+# Built Klipper firmware (regenerate with `make build`)
+config/firmware/klipper-stm32f103-*.bin
+config/firmware/main_board_*.bin
+
+# SD card working copies - exclude everything except the stock backup
+# (the stock backup is the only recovery path and must be preserved)
+sdcard/*.gcode
+sdcard/ac_tri_f1.bin
+sdcard/main_board_*.bin
+!sdcard/main_board_20210902_viper_v2.4.5.bin
+
+# Generated config snippet (build output of gen-stm32f103-bin.sh)
+stm32f103-vyper.config
